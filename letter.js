@@ -11,9 +11,11 @@ function Letter(letter) {
 	this.setGuessed = function(guess) {
 		if (guess===this.letter) {
 			this.guessed = true;
+			return true;
 		} 
 		else {
 			this.guessed = false;
+			return false;
 		}
 	}
 }

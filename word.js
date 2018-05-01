@@ -6,7 +6,7 @@ function Word(word) {
 		return this.letters.map((letterObj) => letterObj.getLetter()).join();
 	}
 	this.checkCorrect = function(guess) {
-		return this.letters.forEach((letterObj) => letterObj.setGuessed(guess));
+		return this.letters.forEach((letterObj) => letterObj.setGuessed(guess)).reduce((b1, b2) => b1 || b2);
 	}
 }
 
