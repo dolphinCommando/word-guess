@@ -12,12 +12,13 @@ function Letter(letter) {
 		if (guess===this.letter) {
 			this.guessed = true;
 			return true;
-		} 
-		else {
-			this.guessed = false;
-			return false;
-		}
+		} else return false;
 	}
 }
+/*
+char = new Letter('a');
+char.setGuessed('b');
+console.log(char.getLetter());
+*/
 
 module.exports = Letter;
