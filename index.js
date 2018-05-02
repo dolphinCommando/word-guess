@@ -31,7 +31,7 @@ function letterEnter() {
 			message: `Guess a letter.`,
 		}
 	]).then(response => {
-		if (!validate(response.char)) {
+		if (!validateChar(response.char)) {
 			console.log('Please enter a single letter');
 			return letterEnter();
 		}
@@ -50,7 +50,7 @@ function letterEnter() {
 	});
 }
 
-function validate(input) {
+function validateChar(input) {
 	return (typeof input === 'string' && input.length===1);
 }
 
