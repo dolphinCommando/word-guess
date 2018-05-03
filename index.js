@@ -31,6 +31,7 @@ function letterEnter() {
 			message: `Guess a letter.`,
 		}
 	]).then(response => {
+		yourTries++;
 		if (!validateChar(response.char)) {
 			console.log('Please enter a single letter of the alphabet.');
 			return letterEnter();
@@ -45,7 +46,6 @@ function letterEnter() {
 				var correct = wordObj.checkCorrect(response.char);
 				(correct) ? console.log('Correct!') : console.log('Nope.');
 			}
-			yourTries++;
 			play();
 		}
 	});
