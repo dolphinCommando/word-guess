@@ -32,10 +32,11 @@ function letterEnter() {
 		}
 	]).then(response => {
 		if (!validateChar(response.char)) {
-			console.log('Please enter a single letter');
+			console.log('Please enter a single letter of the alphabet.');
 			return letterEnter();
 		}
 		else {
+			response.char = response.char.toLowerCase();
 			if (guessed.includes(response.char)) {
 				console.log('Letter already guessed.');
 			} 
@@ -51,7 +52,8 @@ function letterEnter() {
 }
 
 function validateChar(input) {
-	return (typeof input === 'string' && input.length===1);
+	var regex = new RegExp('^[a-z]$');
+	return input.toLowerCase().match(regex);
 }
 
 play();
